@@ -1,0 +1,11 @@
+services:
+  visual-tests:
+    build: .
+    environment:
+      BASE_URL: https://sauce-demo.myshopify.com/
+    command: npx playwright test tests/visual
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+      # Important: Mount the visual test folder so updates go back to your computer
+      - ./tests/visual:/app/tests/visual

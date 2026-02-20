@@ -1,0 +1,9 @@
+services:
+  regression-tests:
+    build: .
+    environment:
+      BASE_URL: https://sauce-demo.myshopify.com/
+    command: npx playwright test tests/regression
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
