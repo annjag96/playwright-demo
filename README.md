@@ -1,3 +1,18 @@
+# Playwright E2E Testing Framework
+
+[![Playwright Tests](https://github.com/annjag96/playwright-demo/actions/workflows/playwright.yml/badge.svg)](https://github.com/annjag96/playwright-demo/actions/workflows/playwright.yml)
+
+A comprehensive end-to-end testing framework built with Playwright and TypeScript, featuring API testing, visual regression, and CI/CD automation.
+
+## Features
+
+- **Page Object Model** - Maintainable test architecture
+- **Visual Regression Testing** - Cross-browser screenshot comparison
+- **API + UI Hybrid Tests** - Network interception and validation
+- **CI/CD Integration** - Automated tests on every commit
+- **Docker Support** - Consistent test environment
+- **Multi-browser Testing** - Chrome, Firefox, Safari, Mobile
+
 ## Test Scenarios
 
 ### API Tests
