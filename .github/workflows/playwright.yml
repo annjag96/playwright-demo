@@ -19,6 +19,15 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test --update-snapshots
+    # Upload snapshots
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-snapshots
+        path: tests/**/*-snapshots/
+        retention-days: 30
+    
+    # Keep the report upload
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
