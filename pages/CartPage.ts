@@ -4,6 +4,7 @@ export class CartPage {
   public readonly cartCountElement;
   public readonly myCart;
   public readonly emptyCart;
+  public readonly proceedToCheckoutButton;
   constructor(private page: Page) {
    //
    // Find the main cart element semantically
@@ -12,6 +13,7 @@ export class CartPage {
     // Then scope down to the count
     this.cartCountElement = this.myCart.locator('.count.cart-target');
     this.emptyCart = page.locator('p.empty').getByText('Your cart is empty.');
+    this.proceedToCheckoutButton = page.locator('#checkout');
   }
 
   async getCartCount(): Promise<number> {
@@ -28,6 +30,10 @@ async waitForCartUpdate(previousCount: number) {
 }
 async clickMyCart(){
   await this.myCart.first().click();
+}
+
+async proceedToCheckout (){
+  await this.proceedToCheckoutButton.click()
 }
 
 }
